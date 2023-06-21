@@ -23,11 +23,23 @@ namespace TechnicalTest
         public void GetLocationInformation(string countryCode, string postCode)
         {
             var url = _configurationProvider.GetUrl();
+            url.Replace("{0}",countryCode).Replace("{1}",postCode);
+            RestResponse response = _resrService.Get(url);
+            Response = response;
+            
+            
         }
 
         public void VerifyRequestStatus(string isSuccessful)
         {
-
+            if (isSuccessful == "true") {
+                Response.StatusCode.ToString().Equals(200);
+            }
+            else
+            {
+                Response.StatusCode.ToString().Equals(404);
+            }
+                       
         }
     }
 }
