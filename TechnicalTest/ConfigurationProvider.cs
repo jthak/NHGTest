@@ -20,7 +20,7 @@ namespace TechnicalTest
 
         public string GetUrl()
         {
-            return _config.GetSection("url").Value;
+            return _config.GetSection("url").Value;  
         }
     }
 }

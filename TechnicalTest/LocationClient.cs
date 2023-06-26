@@ -26,8 +26,6 @@ namespace TechnicalTest
             url.Replace("{0}",countryCode).Replace("{1}",postCode);
             RestResponse response = _resrService.Get(url);
             Response = response;
-            
-            
         }
 
         public void VerifyRequestStatus(string isSuccessful)
